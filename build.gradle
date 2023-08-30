@@ -23,28 +23,28 @@ java {
 }
 
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-
-            groupId = com.github.jitpack
-            artifactId = sample
-            version = 2.0
-        }
-    }
-
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/koyyanap/gradle-simple")  // Replace OWNER and REPO with your repository details
+            url = uri("https://maven.pkg.github.com/mikenoethiger/bank-server-socket")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
-                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
+                // You can either store the username and token in ~/.gradle/gradle.properties (use the gpr.user and gpr.key keys)
+                // Or you can store them as environment variables e.g. in ~/.bash_profile or ~/.zsh depending on your shell (GITHUB_USERNAME and GITHUB_TOKEN keys)
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
-}
+    publications {
+        gpr(MavenPublication) {
+            groupId = 'mikenoethiger.bank'
+            artifactId = 'bank-server-socket'
+            version = '0.2'
 
+            from(components.java)
+        }
+    }
+}
 
 wrapper {
     gradleVersion = "7.3.3"
