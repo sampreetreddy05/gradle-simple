@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'maven-publish'
+plugins {
+    id 'java'
+    id 'application'
+    id 'maven-publish'
+}
 
 // group = 'com.github.jitpack'
 // version = '2.0'
