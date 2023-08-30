@@ -30,8 +30,8 @@ publishing {
             credentials {
                 // You can either store the username and token in ~/.gradle/gradle.properties (use the gpr.user and gpr.key keys)
                 // Or you can store them as environment variables e.g. in ~/.bash_profile or ~/.zsh depending on your shell (GITHUB_USERNAME and GITHUB_TOKEN keys)
-                // username = project.findProperty("gpr.user") ?: System.getenv("github.actor")
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                username = koyyanap
+                password = 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
             }
         }
     }
