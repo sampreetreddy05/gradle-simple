@@ -37,9 +37,9 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            groupId = 'mikenoethiger.bank'
-            artifactId = 'bank-server-socket'
-            version = '0.2'
+            groupId = 'com.github.jitpack'
+            artifactId = 'gradle-simple'
+            version = '1.0'
 
             from(components.java)
         }
