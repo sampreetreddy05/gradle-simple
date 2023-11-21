@@ -39,7 +39,7 @@ publishing {
         gpr(MavenPublication) {
             groupId = 'com.github.jitpack'
             artifactId = 'gradle-simple'
-            version = '1.0'
+            version = '1.2'
             from(components.java)
         }
     }
